@@ -1,0 +1,75 @@
+#!/usr/bin/php
+<?php
+
+if (!isset($argv[1])) {
+    die("Directory with repository is needed\n");
+}
+
+if (!isset($argv[2])) {
+    die("Destination folder is needed\n");
+}
+
+$source = $argv[1];
+$destination = $argv[2];
+$lines = array();
+$currentDir = dirname(__FILE__);
+$now = new DateTime();
+
+if (preg_replace('/[^a-z0-9_]/', '', $source) == preg_replace('/[^a-z0-9_]/', '', $destination)) {
+    die("Source is the same as destination!\n");
+}
+
+if (is_dir($currentDir."/".$destination)) {
+    die("Directory {$destination} already exists!\n");
+}
+
+if (isset($argv[3])) {
+    // specified commit:
+    $sha = $argv[3];
+    if (strpos($sha, ':') !== false) {
+        list ($shaFrom, $shaTo) = explode(':', $sha);
+        exec("cd {$source} && git diff {$shaFrom}..{$shaTo} --diff-filter=MA --name-only --oneline", $lines);
+    }
+    else {
+        exec("cd {$source} && git show {$sha} --name-only --oneline", $lines);
+    }
+}
+else {
+    // last commit:
+    exec("cd {$source} && git show --name-only --oneline", $lines);
+}
+
+// why? first lines are git information
+$lines = array_splice($lines, 1);
+
+echo "Creating directories and coping files...\n\n";
+
+if (!count($lines)) {
+    echo "No changes.\n";
+    exit();
+}
+
+foreach ($lines as $line) {
+    $file = trim($line);
+    $dirPath = dirname(sprintf("%s/%s/%s", $currentDir, $destination, $file));
+    if (!is_dir($dirPath)) {
+        mkdir($dirPath, 0755, true);
+        echo $dirPath. " [created]\n";
+    }
+
+    copy(sprintf("%s/%s/%s", $currentDir, $source, $file), sprintf("%s/%s/%s", $currentDir, $destination, $file));
+    echo sprintf("%s/%s", $destination, $file) . " [copied]\n";
+}
+
+echo "Compression...\n\n";
+
+$gzip = sprintf("tar -czvf %s.%s.tar.gz %s", str_replace('/', '', $source), $now->format('d-m-Y'), $destination);
+
+echo $gzip . "\n";
+system("cd {$currentDir} && {$gzip} && rm -rf {$currentDir}/{$destination}");
+
+echo "\n\nDONE.\n\n";
+
+exit(0);
+
+?>

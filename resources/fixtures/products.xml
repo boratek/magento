@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fixtures>
+    
+    <!-- Zestawy atrybutów (łączą atrybuty w grupy) -->
+    <sets>
+        <set id="rozmiar" name="Rozmiar">
+            <attribute>size</attribute>
+            <attribute>manufacturer</attribute>
+            <attribute>custom_color</attribute>
+            <attribute>discount</attribute>
+            <attribute>new</attribute>
+            <attribute>new_at</attribute>
+        </set>
+    </sets>
+    
+    <!-- 
+        Atrybuty produktów
+        Dopuszczalne właściwosci atrybutu:
+            position,
+            default_value_text,
+            default_value_yesno,
+            default_value_date,
+            default_value_textarea,
+            is_unique,
+            is_required,
+            is_searchable,
+            is_visible_in_advanced_search,
+            is_comparable,
+            is_used_for_promo_rules,
+            is_html_allowed_on_front,
+            is_visible_on_front,
+            used_in_product_listing,
+            used_for_sort_b',
+            is_configurable,
+            is_filterable'
+            is_filterable_in_search,
+            default_value,
+            frontend_label
+            
+        Uwaga: id to nazwa atrybutu który pojawi się w sklepie, obowiązuja wszystkie zasady jak przy tworzeniu zmiennych:
+    -->
+    <attributes>
+        <attribute id="manufacturer" name="Producent" type="select">
+            <option id="a">Rogelli</option>
+            <option id="b">Azzurro</option>
+            <option id="c">Brubeck</option>
+            <option id="d">Mimo</option>
+            <option id="e">Chiba</option>
+        </attribute>
+        <attribute id="custom_color" name="Kolor" type="select" position="2" 
+            is_filterable="true" 
+            is_visible_on_front="true" 
+            is_html_allowed_on_front="true">
+            <option id="czarny">Czarny</option>
+            <option id="czerwony">Czerwony</option>
+            <option id="bialy">Biały</option>
+            <option id="srebrny">Srebrny</option>
+            <option id="niebieski">Niebieski</option>
+        </attribute>
+        <attribute id="size" name="Rozmiar" type="select" position="3" 
+            is_filterable="true" is_visible_on_front="true">
+            <option id="s">S</option>
+            <option id="m">M</option>
+            <option id="l">L</option>
+            <option id="xl">XL</option>
+            <option id="xxl">XXL</option>
+        </attribute>
+        <attribute id="new" name="Nowość" default_value_yesno="1" type="boolean" is_visible_on_front="no" />
+        <attribute id="new_at" name="Nowość od" type="date" is_visible_on_front="no" />
+        <attribute id="discount" name="Promocja cenowa" type="boolean" is_visible_on_front="no" />
+    </attributes>
+    
+    <!-- 
+        Kategorie produktów 
+        
+        root id="default" oznacza, że kategorie zostaną wrzucone do domyślnej kategorii głównej
+    -->
+    <roots>
+        <root id="default" name="Default">
+            <categories>
+                <category id="odziez-rowerowa">
+                    <name>Odzież rowerowa</name>
+                    <description>Odzież rowerowa</description>
+                    <categories>
+                        <category id="bluzy">
+                            <name>Bluzy</name>
+                            <description>Bluzy</description>
+                        </category>
+                        <category id="koszulki">
+                            <name>Koszulki</name>
+                            <description>Koszulki</description>
+                        </category>
+                        <category id="spodenki">
+                            <name>Spodenki</name>
+                            <description>Spodenki</description>
+                            <categories>
+                                <category id="kolarskie">
+                                    <name>Kolarskie</name>
+                                    <description>Kolarskie</description>
+                                </category>
+                                <category id="boxerskie">
+                                    <name>Boxerskie</name>
+                                    <description>Boxerskie</description>
+                                </category>
+                                <category id="do-wspinaczki">
+                                    <name>Do wspinaczki</name>
+                                    <description>Do wspinaczki</description>
+                                </category>
+                            </categories>
+                        </category>
+                        <category id="kaski">
+                            <name>Kaski</name>
+                            <description>Kaski</description>
+                        </category>
+                        <category id="rekawiczki">
+                            <name>Rękawiczki</name>
+                            <description>Rękawiczki</description>
+                        </category>
+                    </categories>
+                </category>
+                <category id="akcesoria-rowerowe">
+                    <name>Akcesoria Rowerowe</name>
+                    <description>Akcesoria rowerowe</description>
+                    <categories>
+                        <category id="kaski">
+                            <name>Kaski</name>
+                            <description>Koski</description>
+                        </category>
+                        <category id="okulary">
+                            <name>Okulary</name>
+                            <description>Okulary</description>
+                        </category>
+                        <category id="pompki">
+                            <name>Pompki</name>
+                            <description>Pompki</description>
+                        </category>
+                    </categories>
+                </category>
+                <category id="odziez-do-biegania">
+                    <name>Odzież do biegania</name>
+                    <description>Odzież do biegania</description>
+                    <categories>
+                        <category id="bluzy">
+                            <name>Bluzy</name>
+                            <description>Bluzy</description>
+                        </category>
+                        <category id="buty">
+                            <name>Buty</name>
+                            <description>Buty</description>
+                            <categories>
+                                <category id="mieka-podeszwa">
+                                    <name>Z mięką podeszwą</name>
+                                    <description>Z miękką podwszwą</description>
+                                </category>
+                                <category id="twarda-podeszwa">
+                                    <name>Z twarda podeszwą</name>
+                                    <description>Z twardą podwszwą</description>
+                                </category>
+                                <category id="z-lampka">
+                                    <name>Z lampką</name>
+                                    <description>Z lampką do nocnego biegania</description>
+                                    <categories>
+                                        <category id="lampka-migajaca">
+                                            <name>Z lampką migającą</name>
+                                            <description>Z lampką migającą</description>
+                                        </category>
+                                        <category id="lampka-swiecaca">
+                                            <name>Z lampką świecącą stałym światłem</name>
+                                            <description>Z lampką świecącą stałym światłe</description>
+                                        </category>
+                                    </categories>
+                                </category>
+                            </categories>
+                        </category>
+                        <category id="koszulki">
+                            <name>Koszulki</name>
+                            <description>Koszulki</description>
+                        </category>
+                        <category id="skarpetki">
+                            <name>Skarpetki</name>
+                            <description>Skarpetki</description>
+                            <categories>
+                                <category id="krotkie">
+                                    <name>Krótkie</name>
+                                    <description>Krótkie</description>
+                                </category>
+                                <category id="dlugie">
+                                    <name>Długie</name>
+                                    <description>Długie</description>
+                                </category>
+                                <category id="podkolanowki">
+                                    <name>Podkolanówki</name>
+                                    <description>Podkolanowki</description>
+                                </category>
+                            </categories>
+                        </category>
+                    </categories>
+                </category>
+                <category id="akcesoria-do-biegania">
+                    <name>Akcesoria do biegania</name>
+                    <description>Akcesoria do biegania</description>
+                    <categories>
+                        <category id="okulary">
+                            <name>Okulary</name>
+                            <description>Okulary</description>
+                        </category>
+                        <category id="opaski">
+                            <name>Opaski</name>
+                            <description>Opaski</description>
+                        </category>
+                        <category id="pulsometry">
+                            <name>Pulsometry</name>
+                            <description>Pulsometry</description>
+                        </category>
+                    </categories>
+                </category>
+            </categories>
+        </root>
+    </roots>
+    
+    
+    <!-- 
+        Produkty:
+        pola wymagane to: sku, name, short_description, description, price, category, reszta jest opcją.
+
+        Uwagi:
+            - SKU musi być unikalne
+            - <stock> to magazyn
+            - <attributes> to wartości atrybutów danego produktu. 
+                parameter "set" mówi jaki zestaw cech ma przyporządkowany dany produkt, potem lecą wartości atrybutów
+            - <variants> to podprodukty niewidoczne na froncie sklepu, będące odmianą produktu nadrzędnego,
+                dokładnie są jego kopią i wyróżnia je jakaś wartość atrybutu. W rzeczywistości produkt nadrzędny 
+                staje się "wirtualny" - jest klejem dla swoich podproduktów, które będą nabywać klienci. 
+                Wyróżnia je inna wartość jednego z atrybutów i jakiekolwiek pole, które zostało umieszczone w sekcji 
+                <option>. Oznacz to, że każdy atrybut w sekcji <option> zasłania to samo pole w produkcie macierzystym.
+                
+             - Z podanego przykładu poniżej zostaną utworzone: 1, 1+3, 1+2 produkty czyli razem 8 produktów, które
+               na froncie sklepu będą widoczne jako 3 produkty, z których 2 ostatnie będą posiadać odmiany (pole select z 
+               możliwością wyboru cechy)
+    -->
+    <products>
+        
+        <product>
+            <sku>013</sku>
+            <name><![CDATA[Koszulka Kolarska]]></name>
+            <short_description><![CDATA[<p>Krótki opis</p>]]></short_description>
+            <description><![CDATA[<p>dlugi opis</p>]]></description>
+            <stock>10</stock>
+            <price>200.00</price>
+            <weight>0.2</weight>
+            <categories>
+                <category>skeleton/odziez-rowerowa/koszulki</category>
+            </categories>
+            <attributes set="rozmiar">
+                <attribute id="size">xl</attribute>
+                <attribute id="manufacturer">chiba</attribute>
+                <attribute id="custom_color">czarny</attribute>
+            </attributes>
+            <images>
+                <image><![CDATA[images/koszulka_1.jpg]]></image>
+                <image><![CDATA[images/koszulka_2.jpg]]></image>
+                <image><![CDATA[images/koszulka_3.jpg]]></image>
+            </images>
+            <related>001</related>
+        </product>        
+        
+        <product>
+            <sku>001</sku>
+            <name><![CDATA[Koszulka A]]></name>
+            <short_description><![CDATA[<p>Krótki opis</p>]]></short_description>
+            <description><![CDATA[<p>dlugi opis</p>]]></description>
+            <stock>10</stock>
+            <price>200.00</price>
+            <weight>0.2</weight>
+            <categories>
+                <category>skeleton/odziez-rowerowa/koszulki</category>
+            </categories>
+            <variants name="Odmiana" type="configurable" attribute="size">
+                <option>
+                    <sku>001001</sku>
+                    <name>Koszulka A1</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">s</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>001002</sku>
+                    <name>Koszulka A2</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">m</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>001003</sku>
+                    <name>Koszulka A3</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">l</attribute>
+                    </attributes>
+                </option>
+            </variants>
+            <attributes set="rozmiar">
+                <attribute id="manufacturer">Rogelli</attribute>
+                <attribute id="custom_color">czarny</attribute>
+            </attributes>
+            <images>
+                <image><![CDATA[images/koszulka_1.jpg]]></image>
+                <image><![CDATA[images/koszulka_2.jpg]]></image>
+                <image><![CDATA[images/koszulka_3.jpg]]></image>
+            </images>
+            <related>013</related>
+        </product>
+    
+        <product>
+            <sku>002</sku>
+            <name><![CDATA[Koszulka B]]></name>
+            <short_description><![CDATA[<p>Krótki opis</p>]]></short_description>
+            <description><![CDATA[<p>dlugi opis</p>]]></description>
+            <stock>10</stock>
+            <price>200.00</price>
+            <weight>0.2</weight>
+            <categories>
+                <category>skeleton/odziez-rowerowa/koszulki</category>
+            </categories>
+            <variants name="Odmiana" type="configurable" attribute="size">
+                <option>
+                    <sku>002001</sku>
+                    <name>Koszulka B1</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">s</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>002002</sku>
+                    <name>Koszulka B2</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">m</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>002003</sku>
+                    <name>Koszulka B3</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">l</attribute>
+                    </attributes>
+                </option>
+            </variants>
+            <attributes set="rozmiar">
+                <attribute id="manufacturer">Rogelli</attribute>
+                <attribute id="custom_color">czerwony</attribute>
+            </attributes>
+            <images>
+                <image><![CDATA[images/koszulka_2.jpg]]></image>
+                <image><![CDATA[images/koszulka_1.jpg]]></image>
+                <image><![CDATA[images/koszulka_3.jpg]]></image>
+            </images>
+            <related>001,003,004</related>
+        </product>
+    
+        <product>
+            <sku>003</sku>
+            <name><![CDATA[Koszulka C]]></name>
+            <short_description><![CDATA[<p>Krótki opis</p>]]></short_description>
+            <description><![CDATA[<p>dlugi opis</p>]]></description>
+            <stock>10</stock>
+            <price>200.00</price>
+            <weight>0.2</weight>
+            <categories>
+                <category>skeleton/odziez-rowerowa/koszulki</category>
+            </categories>
+            <variants name="Odmiana" type="configurable" attribute="size">
+                <option>
+                    <sku>003001</sku>
+                    <name>Koszulka C1</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">s</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>003002</sku>
+                    <name>Koszulka C2</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">m</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>003003</sku>
+                    <name>Koszulka C3</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">xl</attribute>
+                    </attributes>
+                </option>
+            </variants>
+            <attributes set="rozmiar">
+                <attribute id="manufacturer">Rogelli</attribute>
+                <attribute id="custom_color">Biały</attribute>
+            </attributes>
+            <images>
+                <image><![CDATA[images/koszulka_3.jpg]]></image>
+                <image><![CDATA[images/koszulka_1.jpg]]></image>
+                <image><![CDATA[images/koszulka_2.jpg]]></image>
+            </images>
+            <related>001,002,004</related>
+        </product>
+    
+        <product>
+            <sku>004</sku>
+            <name><![CDATA[Kask A]]></name>
+            <short_description><![CDATA[<p>Krótki opis</p>]]></short_description>
+            <description><![CDATA[<p>dlugi opis</p>]]></description>
+            <stock>10</stock>
+            <price>200.00</price>
+            <weight>0.2</weight>
+            <categories>
+                <category>skeleton/akcesoria-rowerowe/kaski</category>
+            </categories>
+            <variants name="Odmiana" type="configurable" attribute="size">
+                <option>
+                    <sku>004001</sku>
+                    <name>Kask A1</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">xl</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>004002</sku>
+                    <name>Kask A2</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">s</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>004003</sku>
+                    <name>Kask A3</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">m</attribute>
+                    </attributes>
+                </option>
+            </variants>
+            <attributes set="rozmiar">
+                <attribute id="manufacturer">Azzurro</attribute>
+                <attribute id="custom_color">srebrny</attribute>
+            </attributes>
+            <images>
+                <image><![CDATA[images/kask_1.jpg]]></image>
+                <image><![CDATA[images/kask_2.jpg]]></image>
+                <image><![CDATA[images/kask_3.jpg]]></image>
+            </images>
+            <related>001,002,003</related>
+        </product>
+        
+        <product>
+            <sku>005</sku>
+            <name><![CDATA[Kask B]]></name>
+            <short_description><![CDATA[<p>Krótki opis</p>]]></short_description>
+            <description><![CDATA[<p>dlugi opis</p>]]></description>
+            <stock>10</stock>
+            <price>200.00</price>
+            <weight>0.2</weight>
+            <categories>
+                <category>skeleton/akcesoria-rowerowe/kaski</category>
+            </categories>
+            <variants name="Odmiana" type="configurable" attribute="size">
+                <option>
+                    <sku>005001</sku>
+                    <name>Kask B1</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">m</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>005002</sku>
+                    <name>Kask B2</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">s</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>005003</sku>
+                    <name>Kask B3</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">xl</attribute>
+                    </attributes>
+                </option>
+            </variants>
+            <attributes set="rozmiar">
+                <attribute id="manufacturer">Azzurro</attribute>
+                <attribute id="custom_color">bialy</attribute>
+            </attributes>
+            <images>
+                <image><![CDATA[images/kask_2.jpg]]></image>
+                <image><![CDATA[images/kask_1.jpg]]></image>
+                <image><![CDATA[images/kask_3.jpg]]></image>
+            </images>
+            <related>001,002,003</related>
+        </product>
+        
+        <product>
+            <sku>006</sku>
+            <name><![CDATA[Kask C]]></name>
+            <short_description><![CDATA[<p>Krótki opis</p>]]></short_description>
+            <description><![CDATA[<p>dlugi opis</p>]]></description>
+            <stock>10</stock>
+            <price>200.00</price>
+            <weight>0.2</weight>
+            <categories>
+                <category>skeleton/akcesoria-rowerowe/kaski</category>
+            </categories>
+            <variants name="Odmiana" type="configurable" attribute="size">
+                <option>
+                    <sku>006001</sku>
+                    <name>Kask C1</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">m</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>006002</sku>
+                    <name>Kask C2</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">xl</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>006003</sku>
+                    <name>Kask C3</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">l</attribute>
+                    </attributes>
+                </option>
+            </variants>
+            <attributes set="rozmiar">
+                <attribute id="custom_color">czarny</attribute>
+                <attribute id="manufacturer">Azzurro</attribute>
+            </attributes>
+            <images>
+                <image><![CDATA[images/kask_3.jpg]]></image>
+                <image><![CDATA[images/kask_1.jpg]]></image>
+                <image><![CDATA[images/kask_2.jpg]]></image>
+            </images>
+            <related>001,002,003</related>
+        </product>
+    
+        <product>
+            <sku>007</sku>
+            <name><![CDATA[Skarpetki A]]></name>
+            <short_description><![CDATA[<p>Krótki opis</p>]]></short_description>
+            <description><![CDATA[<p>dlugi opis</p>]]></description>
+            <stock>10</stock>
+            <price>200.00</price>
+            <weight>0.2</weight>
+            <categories>
+                <category>skeleton/odziez-do-biegania/skarpetki</category>
+            </categories>
+            <variants name="Odmiana" type="configurable" attribute="size">
+                <option>
+                    <sku>007001</sku>
+                    <name>Skarpetki A1</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">m</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>007002</sku>
+                    <name>Skarpetki A2</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">l</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>007003</sku>
+                    <name>Skarpetki A3</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">xl</attribute>
+                    </attributes>
+                </option>
+            </variants>
+            <attributes set="rozmiar">
+                <attribute id="manufacturer">Brubeck</attribute>
+                <attribute id="custom_color">bialy</attribute>
+            </attributes>
+            <images>
+                <image><![CDATA[images/skarpetki_1.jpg]]></image>
+                <image><![CDATA[images/skarpetki_2.jpg]]></image>
+                <image><![CDATA[images/skarpetki_3.jpg]]></image>
+            </images>
+            <related>001,002,003</related>
+        </product>
+    
+        <product>
+            <sku>008</sku>
+            <name><![CDATA[Skarpetki B]]></name>
+            <short_description><![CDATA[<p>Krótki opis</p>]]></short_description>
+            <description><![CDATA[<p>dlugi opis</p>]]></description>
+            <stock>10</stock>
+            <price>200.00</price>
+            <weight>0.2</weight>
+            <categories>
+                <category>skeleton/odziez-do-biegania/skarpetki</category>
+            </categories>
+            <variants name="Odmiana" type="configurable" attribute="size">
+                <option>
+                    <sku>008001</sku>
+                    <name>Skarpetki B1</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">m</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>008002</sku>
+                    <name>Skarpetki B2</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">l</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>008003</sku>
+                    <name>Skarpetki B3</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">xl</attribute>
+                    </attributes>
+                </option>
+            </variants>
+            <attributes set="rozmiar">
+                <attribute id="manufacturer">Brubeck</attribute>
+                <attribute id="custom_color">niebieski</attribute>
+            </attributes>
+            <images>
+                <image><![CDATA[images/skarpetki_2.jpg]]></image>
+                <image><![CDATA[images/skarpetki_1.jpg]]></image>
+                <image><![CDATA[images/skarpetki_3.jpg]]></image>
+            </images>
+            <related>001,002,003</related>
+        </product>
+    
+        <product>
+            <sku>009</sku>
+            <name><![CDATA[Skarpetki C]]></name>
+            <short_description><![CDATA[<p>Krótki opis</p>]]></short_description>
+            <description><![CDATA[<p>dlugi opis</p>]]></description>
+            <stock>10</stock>
+            <price>200.00</price>
+            <weight>0.2</weight>
+            <categories>
+                <category>skeleton/odziez-do-biegania/skarpetki</category>
+            </categories>
+            <variants name="Odmiana" type="configurable" attribute="size">
+                <option>
+                    <sku>009001</sku>
+                    <name>Skarpetki C1</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">m</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>009002</sku>
+                    <name>Skarpetki C2</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">l</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>009003</sku>
+                    <name>Skarpetki C3</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">xl</attribute>
+                    </attributes>
+                </option>
+            </variants>
+            <attributes set="rozmiar">
+                <attribute id="manufacturer">Brubeck</attribute>
+                <attribute id="custom_color">niebieski</attribute>
+            </attributes>
+            <images>
+                <image><![CDATA[images/skarpetki_3.jpg]]></image>
+                <image><![CDATA[images/skarpetki_1.jpg]]></image>
+                <image><![CDATA[images/skarpetki_2.jpg]]></image>
+            </images>
+            <related>001,002,003</related>
+        </product>
+        
+        <product>
+            <sku>010</sku>
+            <name><![CDATA[Okulary A]]></name>
+            <short_description><![CDATA[<p>Krótki opis</p>]]></short_description>
+            <description><![CDATA[<p>dlugi opis</p>]]></description>
+            <stock>10</stock>
+            <price>200.00</price>
+            <weight>0.2</weight>
+            <categories>
+                <category>skeleton/akcesoria-do-biegania/okulary</category>
+            </categories>
+            <variants name="Odmiana" type="configurable" attribute="size">
+                <option>
+                    <sku>010001</sku>
+                    <name>Okulary A1</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">xl</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>010002</sku>
+                    <name>Okulary A2</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">s</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>010003</sku>
+                    <name>Okulary A3</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">m</attribute>
+                    </attributes>
+                </option>
+            </variants>
+            <attributes set="rozmiar">
+                <attribute id="manufacturer">Mimo</attribute>
+                <attribute id="custom_color">bialy</attribute>
+            </attributes>
+            <images>
+                <image><![CDATA[images/okulary_1.jpg]]></image>
+                <image><![CDATA[images/okulary_2.jpg]]></image>
+                <image><![CDATA[images/okulary_3.jpg]]></image>
+            </images>
+            <related>001,002,003</related>
+        </product>
+    
+        <product>
+            <sku>011</sku>
+            <name><![CDATA[Okulary B]]></name>
+            <short_description><![CDATA[<p>Krótki opis</p>]]></short_description>
+            <description><![CDATA[<p>dlugi opis</p>]]></description>
+            <stock>10</stock>
+            <price>200.00</price>
+            <weight>0.2</weight>
+            <categories>
+                <category>skeleton/akcesoria-do-biegania/okulary</category>
+            </categories>
+            <variants name="Odmiana" type="configurable" attribute="size">
+                <option>
+                    <sku>011001</sku>
+                    <name>Okulary B1</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">l</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>011002</sku>
+                    <name>Okulary B2</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">m</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>011003</sku>
+                    <name>Okulary B3</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">s</attribute>
+                    </attributes>
+                </option>
+            </variants>
+            <attributes set="rozmiar">
+                <attribute id="manufacturer">Mimo</attribute>
+                <attribute id="custom_color">bialy</attribute>
+            </attributes>
+            <images>
+                <image><![CDATA[images/okulary_2.jpg]]></image>
+                <image><![CDATA[images/okulary_1.jpg]]></image>
+                <image><![CDATA[images/okulary_3.jpg]]></image>
+            </images>
+            <related>001,002,003</related>
+        </product>
+    
+        <product>
+            <sku>012</sku>
+            <name><![CDATA[Okulary C]]></name>
+            <short_description><![CDATA[<p>Krótki opis</p>]]></short_description>
+            <description><![CDATA[<p>dlugi opis</p>]]></description>
+            <stock>10</stock>
+            <price>200.00</price>
+            <weight>0.2</weight>
+            <categories>
+                <category>skeleton/akcesoria-do-biegania/okulary</category>
+            </categories>
+            <variants name="Odmiana" type="configurable" attribute="size">
+                <option>
+                    <sku>012001</sku>
+                    <name>Okulary C1</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">xl</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>012002</sku>
+                    <name>Okulary C2</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">l</attribute>
+                    </attributes>
+                </option>
+                <option>
+                    <sku>012003</sku>
+                    <name>Okulary C3</name>
+                    <price>200.00</price>
+                    <weight>0.5</weight>
+                    <attributes set="rozmiar">
+                        <attribute id="size">s</attribute>
+                    </attributes>
+                </option>
+            </variants>
+            <attributes set="rozmiar">
+                <attribute id="manufacturer">Mimo</attribute>
+                <attribute id="custom_color">niebieski</attribute>
+            </attributes>
+            <images>
+                <image><![CDATA[images/okulary_3.jpg]]></image>
+                <image><![CDATA[images/okulary_1.jpg]]></image>
+                <image><![CDATA[images/okulary_2.jpg]]></image>
+            </images>
+            <related>001,002,003</related>
+        </product>
+    
+    </products>
+</fixtures>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Hatimeria_Info>
+            <version>0.1.0</version>
+        </Hatimeria_Info>
+    </modules>
+    <global>
+        <blocks>
+            <hinfo>
+                <class>Hatimeria_Info_Block</class>
+            </hinfo>
+        </blocks>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <hinfo>
+                    <file>hinfo.xml</file>
+                </hinfo>
+            </updates>
+        </layout>
+    </frontend>
+</config>

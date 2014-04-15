@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fixtures>
+    <core>
+        <websites>
+            <website code="skeleton" name="Skeleton" id="1">
+                <group name="Skeleton" id="1">
+                    <store code="pl" name="Polish" id="1" />
+                    <store code="en" name="English" />
+                    <store code="de" name="Germany" />
+                </group>
+            </website>
+        </websites>
+        <config>
+            
+            <!-- Stores -->
+            <data path="general/country/default" scope="store" scope_id="de">DE</data>
+            <data path="general/locale/code" scope="store" scope_id="de">de_DE</data>
+            <data path="general/country/default" scope="store" scope_id="en">GB</data>
+            <data path="general/locale/code" scope="store" scope_id="en">en_GB</data>
+
+            <!-- Developer -->
+            <data path="dev/template/allow_symlink">1</data>
+            <data path="dev/log/active">1</data>
+            
+            <!-- General: -->
+            <data path="general/country/allow">AT,HR,CZ,FR,ES,NL,DE,PL,GB,IT</data>
+            <data path="general/country/default">PL</data>
+            <data path="general/local/timezome">Europe/Warsaw</data>
+            <data path="general/locale/weekend">0,6</data>
+            <data path="general/locale/firstday">1</data>
+            <data path="general/store_information/address"><![CDATA[Adres sklepu]]></data>
+            <data path="general/store_information/name" scope="website" scope_id="skeleton">Skeleton</data>
+            <data path="general/store_information/phone">+ 48 000-00-00</data>
+            
+            <!-- Advanced: disable modules: -->
+            <data path="advanced/modules_disable_output/Mage_AdminNotification">1</data>
+            
+            <!-- Content -->
+            <data path="cms/wysiwyg/enabled">hidden</data>
+            
+            <!-- Web: -->
+            <data path="web/url/use_store">1</data>
+            <data path="web/url/redirect_to_base">1</data>
+            <data path="web/unsecure/base_url" use="fromCustomConfiguration">install.url</data>
+            <data path="web/secure/base_url" use="fromCustomConfiguration">install.url</data>
+            <data path="web/unsecure/base_url" scope="website" scope_id="skeleton" use="fromCustomConfiguration">install.url</data>
+            <data path="web/secure/base_url" scope="website" scope_id="skeleton" use="fromCustomConfiguration">install.url</data>
+            <data path="web/seo/use_rewrites">1</data>
+            
+            <!-- Design: -->
+            <data path="design/theme/template" scope="website" scope_id="skeleton">skeleton</data>
+            <data path="design/theme/skin" scope="website" scope_id="skeleton">skeleton</data>
+            <data path="design/theme/layout" scope="website" scope_id="skeleton">skeleton</data>
+            <data path="design/header/logo_alt" scope="website" scope_id="skeleton">Skeleton</data>
+            <data path="design/header/logo_src" scope="website" scope_id="skeleton">images/logo.gif</data>
+            <data path="design/header/logo_alt" scope="website" scope_id="skeleton">Skeleton</data>
+            <data path="design/head/shortcut_icon">default/favicon_1.ico</data>
+            <data path="design/footer/copyright"><![CDATA[&copy; Copyright Skeleton]]></data>
+            
+            <!-- Design: heads, titles, keywords, descrpitios -->
+            <data path="design/head/default_title" scope="website" scope_id="skeleton">Tytuł sklepu</data>
+            <data path="design/head/title_suffix" scope="website" scope_id="skeleton"> - Skeleton</data>
+            <data path="design/head/default_description" scope="website" scope_id="skeleton">opis sklepu</data>
+            <data path="design/head/default_keywords" scope="website" scope_id="skeleton">slowa kluczowe</data>
+            
+            <!-- Currencies: -->
+            <data path="currency/options/base">PLN</data>
+            <data path="currency/options/default">PLN</data>
+            <data path="currency/options/allow">USD,EUR,CZK,PLN</data>
+            
+            <!-- Customer: -->
+            <data path="customer/address/street_lines">1</data>
+            <data path="customer/address_templates/html"><![CDATA[{{var firstname}} {{var lastname}}<br/>{{depend company}}{{var company}}{{/depend}} {{depend nip}}(NIP: {{var nip}}){{/depend}}<br/>{{var street1}} {{var street2}} {{depend street3}}{{var street3}}{{/depend}}<br />{{if city}}{{var city}}, {{/if}}{{if region}}{{var region}}, {{/if}}{{if postcode}}{{var postcode}}{{/if}}<br/>{{var country}}<br/>{{depend telephone}}Tel: {{var telephone}}{{/depend}}{{depend fax}}<br/>Fax: {{var fax}}{{/depend}}]]></data>
+            <data path="customer/address_templates/text"><![CDATA[{{var firstname}} {{var lastname}} {{depend company}}{{var company}}{{/depend}} {{depend nip}}(NIP: {{var nip}}){{/depend}} {{var street1}} {{var street2}} {{depend street3}}{{var street3}}{{/depend}} {{if city}}{{var city}},  {{/if}}{{if region}}{{var region}}, {{/if}}{{if postcode}}{{var postcode}}{{/if}}{{var country}}T: {{var telephone}}{{depend fax}}F: {{var fax}}{{/depend}}]]></data>
+            
+            <!-- Catalog: -->
+            <data path="catalog/frontend/grid_per_page_values">8,16,24</data>
+            <data path="catalog/frontend/list_mode">grid</data>
+            <data path="catalog/filters/filters_field">2</data>
+            <data path="catalog/frontend/grid_per_page">16</data>
+            <!-- combine search method (fulltext and like) -->
+            <data path="catalog/search/search_type">3</data>
+            
+            <!-- Custom Tabs -->
+            <data path="custom_tabs/news/title" scope="website" scope_id="skeleton">Nowości</data>
+            <data path="custom_tabs/news/subpages" scope="website" scope_id="skeleton">new-products,discounts,news</data>
+            <data path="custom_tabs/advices/title" scope="website" scope_id="skeleton">Poradnik</data>
+            <data path="custom_tabs/advices/subpages" scope="website" scope_id="skeleton">how-to-buy</data>
+            <data path="custom_tabs/help/title" scope="website" scope_id="skeleton">Pomoc</data>
+            <data path="custom_tabs/help/subpages" scope="website" scope_id="skeleton">help-time-delivery, help-faq, help-payment-methods, help-how-to-place-order, help-contact, help-costs-delivery, help-about, help-feedbacks, help-complaints, help-terms, help-replace-order, help-returns</data>
+            
+            <!-- Ask for product -->
+            <data path="askforproduct/askforproduct/enable_product_view">1</data>
+            
+            <!-- facebook -->
+            <data path="facebook/likebutton/active">1</data>
+            <data path="facebook/likebutton/showfaces">0</data>
+            <data path="facebook/likebutton/width">100</data>
+            <data path="facebook/comments/active">1</data>
+            <data path="facebook/comments/user_id"></data>
+            <data path="facebook/comments/app_id"></data>
+            <data path="facebook/comments/count">10</data>
+            <data path="facebook/comments/width">665</data>
+            
+            <!-- Shipping and Payments -->
+            <data path="payment/cashondelivery/active"><![CDATA[1]]></data>
+            <data path="payment/cashondelivery/display_zero_fee"><![CDATA[0]]></data>
+            <data path="payment/cashondelivery/title"><![CDATA[Płatność gotówką]]></data>
+            <data path="payment/cashondelivery/order_status"><![CDATA[pending]]></data>
+            <data path="payment/cashondelivery/shippingallowspecific"><![CDATA[1]]></data>
+            <data path="payment/cashondelivery/shippingspecificcountry"><![CDATA[PL]]></data>
+            <data path="payment/cashondelivery/disallowspecificshippingmethods"><![CDATA[0]]></data>
+            <data path="payment/ccsave/active"><![CDATA[0]]></data>
+            <data path="payment/free/title"><![CDATA[No Payment Information Required]]></data>
+            <data path="payment/free/active"><![CDATA[1]]></data>
+            <data path="payment/free/order_status"><![CDATA[pending]]></data>
+            <data path="payment/free/allowspecific"><![CDATA[0]]></data>
+            <data path="payment/free/sort_order"><![CDATA[1]]></data>
+            <data path="payment/checkmo/active"><![CDATA[1]]></data>
+            <data path="payment/checkmo/title"><![CDATA[Przelew na konto bankowe]]></data>
+            <data path="payment/checkmo/order_status"><![CDATA[pending]]></data>
+            <data path="payment/checkmo/allowspecific"><![CDATA[0]]></data>
+            <data path="payment/checkmo/mailing_address"><![CDATA[
+Alior 27 2490 0005 0000 4520 2241 3517.
+Mbank 10 1140 2004 0000 3902 4058 9618 
+Skeleton Shop]]></data>
+            <data path="payment/payupl/active"><![CDATA[1]]></data>
+            <data path="payment/payupl/title"><![CDATA[Payu.pl]]></data>
+            <data path="payment/payupl/gateway_url"><![CDATA[https://www.platnosci.pl/paygw]]></data>
+            <data path="payment/payupl/encoding"><![CDATA[UTF]]></data>
+        </config>
+    </core>   
+    
+    <!-- Bloki -->
+    <blocks model="cms/block">
+        <block id="1">
+            <title>Footer - Linki</title>
+            <identifier>footer_links</identifier>
+            <content>
+                <![CDATA[
+                    <ul>
+                        <li><a href="{{store}}">Strona Główna</a></li>
+                        <li><a href="{{store url="customer/account"}}">Konto</a></li>
+                        <li><a href="{{store url="checkout/cart"}}">Koszyk</a></li>
+                        <li><a href="{{store url="faq"}}">Pomoc</a></li>
+                    </ul>
+                ]]>
+            </content>
+            <stores use="storeCodeToId">0</stores>
+        </block>
+    </blocks>
+    
+    <!-- Podstrony -->
+    <pages model="cms/page">
+        <page id="2">
+            <title>Strona główna</title>
+            <content_heading></content_heading>
+            <identifier>home</identifier>
+            <content><![CDATA[<p>Treść strony głównej</p>]]></content>
+            <root_template>home</root_template>
+            <layout_update_xml>
+                <![CDATA[
+                <reference name="content">
+
+                </reference>
+                ]]>
+            </layout_update_xml>
+            <meta_description><![CDATA[sklep]]></meta_description>
+            <meta_keywords><![CDATA[sklep]]></meta_keywords>
+            <stores use="storeCodeToId">pl, en, de</stores>
+        </page>
+    </pages>
+    
+</fixtures>
