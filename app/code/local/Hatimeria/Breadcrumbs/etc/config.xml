@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Hatimeria_Breadcrumbs>
+            <version>0.1.0</version>
+        </Hatimeria_Breadcrumbs>
+    </modules>
+    <global>
+        <blocks>
+            <hbreadcrumbs>
+                <class>Hatimeria_Breadcrumbs_Block</class>
+            </hbreadcrumbs>
+        </blocks>
+        <helpers>
+            <hbreadcrumbs>
+                <class>Hatimeria_Breadcrumbs_Helper</class>
+            </hbreadcrumbs>
+        </helpers>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <hbreadcrumbs>
+                    <file>hbreadcrumbs.xml</file>
+                </hbreadcrumbs>
+            </updates>
+        </layout>
+    </frontend>
+</config>

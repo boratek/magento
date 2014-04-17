@@ -1,18 +1,22 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <config>
     <modules>
         <Hatimeria_Info>
             <version>0.1.0</version>
         </Hatimeria_Info>
     </modules>
-    <global>
-        <blocks>
-            <hinfo>
-                <class>Hatimeria_Info_Block</class>
-            </hinfo>
-        </blocks>
-    </global>
+
     <frontend>
+        <routers>
+            <hinfo>
+                <use>standard</use>
+                <args>
+                    <module>Hatimeria_Info</module>
+                    <frontName>info</frontName>
+                </args>
+            </hinfo>
+        </routers>
+
         <layout>
             <updates>
                 <hinfo>

@@ -96,7 +96,7 @@ class Mage_Page_Block_Html_Breadcrumbs extends Mage_Core_Block_Template
             reset($this->_crumbs);
             $this->_crumbs[key($this->_crumbs)]['first'] = true;
             end($this->_crumbs);
-            $this->_crumbs[key($this->_crumbs)]['last'] = true;
+            $this->_crumbs[key($this->_crumbs)]['last'] = false;
         }
         $this->assign('crumbs', $this->_crumbs);
         return parent::_toHtml();
