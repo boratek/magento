@@ -1,3 +1,7 @@
+.bugs {
+    display: none;
+}
+
 /* Shopping cart total summary row expandable to details */
 tr.summary-total {
   cursor: pointer;

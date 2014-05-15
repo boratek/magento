@@ -1,0 +1,18 @@
+<?php
+    /* @var $this Hatimeria_FrontWidget_Block_Banner */
+?>
+<div class="front-widget" id="widget-<?php echo $this->getData('widget_id') ?>" style="display:none;">
+    <ul>
+        <?php foreach ($this->getBlocks() as $block): ?>
+        <li>
+            <div class="slide-container">
+                <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId($block->getIdentifier())->toHtml() ?>
+            </div>
+            <?php if ($this->getWithTitles()): ?>
+                <h3><?php echo $block->getTitle() ?></h3>
+            <?php endif ?>
+        </li>
+        <?php endforeach ?>
+    </ul>
+</div>
+<?php $this->helper('json')->add('player', $this->getRegistry()->addConfig($this->getData('widget_id'), $this->getJsConfig())->getConfig()) ?>

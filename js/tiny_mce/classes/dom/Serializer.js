@@ -338,7 +338,7 @@
 				if (!args.cleanup)
 					args.content = args.content.replace(/\uFEFF|\u200B/g, '');
 
-				// Post process
+				// Edit process
 				if (!args.no_events)
 					onPostProcess.dispatch(self, args);
 

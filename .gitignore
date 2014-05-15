@@ -16,7 +16,6 @@ scripts/import
 .directory
 /test.php
 /vendor
-
 # --GENERATED--
 /lib/Hatimeria/Fixtures
 /app/code/community/Hatimeria/Fixtures

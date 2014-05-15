@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<widgets>
+    <hnews_widget type="hnews/widget" module="hnews">
+        <name>Widget News</name>
+        <description type="desc">Test Widget News</description>
+
+        <parameters>
+            <label>
+                <label>Label</label>
+                <type>text</type>
+                <visible>1</visible>
+                <required>1</required>
+            </label>
+            <short_description>
+                <label>Message</label>
+                <type>text</type>
+                <visible>1</visible>
+                <required>1</required>
+            </short_description>
+        </parameters>
+
+    </hnews_widget>
+</widgets>

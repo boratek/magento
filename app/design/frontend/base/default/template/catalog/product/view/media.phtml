@@ -34,6 +34,9 @@
     $_product = $this->getProduct();
     $_helper = $this->helper('catalog/output');
 ?>
+
+<pre><?php Zend_Debug::dump($_product) ?></pre>
+
 <?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
 <p class="product-image product-image-zoom">
     <?php

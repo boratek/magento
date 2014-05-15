@@ -31,6 +31,8 @@
            <label for="shipping-address-select"><?php echo $this->__('Select a shipping address from your address book or enter a new address.') ?></label>
            <div class="input-box">
                <?php echo $this->getAddressesHtmlSelect('shipping') ?>
+
+               <pre><?php Zend_Debug::dump($this) ?></pre>
            </div>
        </li>
     <?php endif ?>
@@ -142,6 +144,9 @@
         </span>
     </div>
 </form>
+
+<pre><?php Zend_Debug::dump($this) ?></pre>
+
 <script type="text/javascript">
 //<![CDATA[
     var shipping = new Shipping('co-shipping-form', '<?php echo $this->getUrl('checkout/onepage/getAddress') ?>address/', '<?php echo $this->getUrl('checkout/onepage/saveShipping') ?>',

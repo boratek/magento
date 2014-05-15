@@ -1,0 +1,32 @@
+li:nth-child(even) .block-content .post-text{
+    background-image: url('http://magento.dev/skin/frontend/base/default/images/catalog/product/placeholder/small_image.jpg');
+}
+
+.posts > .block-content{
+    padding: 3px;
+}
+
+.post-title{
+    text-align: center;
+}
+
+.post-author{
+    text-align: right;
+}
+
+p.post-text{
+    word-break: normal;
+    text-indent: 10px;
+}
+
+p.post-text:first-line{
+    font-weight: bold;
+}
+
+p.post-text:first-letter{
+    font-size: 20px;
+}
+
+span.post-date{
+    font-style: italic;
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+    <default>
+        <reference name="top.links">
+            <action method="addLink" translate="label title">
+                <label>News</label>
+                <url>hnews/index</url>
+                <title>News</title>
+                <prepare>true</prepare>
+                <urlParams/>
+                <position>30</position>
+            </action>
+        </reference>
+    </default>
+
+    <hnews_index_index>
+        <reference name="head">
+            <action method="addCss"><script>../../boilerplate/bartek/css/posts.css</script></action>
+        </reference>
+
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/3columns.phtml</template>
+            </action>
+        </reference>
+
+        <reference name="content">
+            <!--hinfo = nazwa modułu; homepage_news = ścieżka do bloku, więcej nie trzeba, bo podałeś w config.xml-->
+            <block type="hnews/post" name="hatimeria.news" template="hnews/news.phtml">
+                <action method="setMyTitle"><title>News</title></action>
+            </block>
+        </reference>
+
+        <reference name="left">
+            <block type="widget/news" name="hatimeria.news.widget" template="hwidget/news_widget.phtml">
+            </block>
+        </reference>
+    </hnews_index_index>
+
+</layout>

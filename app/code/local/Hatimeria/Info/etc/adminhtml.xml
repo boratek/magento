@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <hinfo translate="title" module="hinfo">
+            <title>Info</title>
+            <sort_order>100</sort_order>
+            <children>
+                <page translate="title" module="hinfo">
+                    <title>Persons</title>
+                    <action>hinfo/adminhtml_person</action>
+                    <sort_order>0</sort_order>
+                </page>
+            </children>
+        </hinfo>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <hinfo translate="title" module="hinfo">
+                                        <title>Hatimeria Info</title>
+                                    </hinfo>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

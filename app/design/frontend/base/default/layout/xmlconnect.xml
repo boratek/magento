@@ -446,7 +446,7 @@
         <block type="xmlconnect/cart_paypal_mecl_shippingmethods" name="xmlconnect.cart.paypal.mecl.shippingmethods" output="toHtml"></block>
     </xmlconnect_paypal_mecl_shippingmethods>
 
-    <!-- Cms -->
+    <!-- News -->
 
     <xmlconnect_cms_page>
         <block type="xmlconnect/cms_page" name="xmlconnect.cms.page" output="toHtml"/>

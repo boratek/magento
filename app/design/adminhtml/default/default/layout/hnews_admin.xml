@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+    <hnews_adminhtml_post_index>
+        <reference name="content">
+            <block type="hnews/adminhtml_post" name="hnews.adminhtml.post"></block>
+        </reference>
+    </hnews_adminhtml_post_index>
+
+    <hnews_adminhtml_post_edit>
+        <reference name="content">
+            <block type="hnews/adminhtml_post_edit" name="hnews.post.edit">
+                <block type="hnews/adminhtml_post_edit_form" name="form"></block>
+            </block>
+        </reference>
+    </hnews_adminhtml_post_edit>
+</layout>

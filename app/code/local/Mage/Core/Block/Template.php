@@ -241,7 +241,7 @@ HTML;
                 try {
                     include $includeFilePath;
                 } catch (Exception $e) {
-                    echo '<div style="border:1px dashed #F00; padding:10px;">TEMPLATE ERROR: ' . $e->getMessage() . '</div>';
+                    echo '<div style="border:1px dashed #F00; padding:10px;">TEMPLATE ERROR: ' . $fileName .' (' . $e->getMessage() . ')</div>';
                 }
             } else {
                 Mage::log('Not valid template file:'.$fileName, Zend_Log::CRIT, null, null, true);

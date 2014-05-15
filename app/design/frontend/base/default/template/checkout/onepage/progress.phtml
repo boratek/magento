@@ -33,6 +33,7 @@
             <?php if ($this->getCheckout()->getStepData('billing', 'is_show')): ?>
             <div id="billing-progress-opcheckout">
                 <?php echo $this->getChildHtml('billing.progress') ?>
+                <pre><?php Zend_Debug::dump($this->getChildHtml('billing.progress')) ?></pre>
             </div>
             <?php endif; ?>
 
@@ -53,6 +54,8 @@
                 <?php echo $this->getChildHtml('payment.progress') ?>
             </div>
             <?php endif; ?>
+
+
         </dl>
     </div>
 </div>

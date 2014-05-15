@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<widgets>
+    <info_widget type="widget/info">
+        <name>Widget Info</name>
+        <description type="desc">Test Widget Info</description>
+        <parameters>
+            <enabled_services>
+                <label>Enabled Services</label>
+                <visible>1</visible>
+                <required>1</required>
+                <type>multiselect</type>
+                <source_model>widget_info/services</source_model>
+            </enabled_services>
+            <template translate="label">
+                <label>Frontend Template</label>
+                <visible>1</visible>
+                <required>1</required>
+                <type>select</type>
+                <values>
+                    <text translate="label">
+                        <value>hwidget/text.phtml</value>
+                        <label>Text Links</label>
+                    </text>
+                </values>
+            </template>
+        </parameters>
+    </info_widget>
+</widgets> 

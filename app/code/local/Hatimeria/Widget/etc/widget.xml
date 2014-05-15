@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<widgets>
+    <hwidget_twitter type="hwidget/twitter">
+        <name>Bookmark: Twitter</name>
+        <description type="desc">Adds a simple "Tweet This!" link</description>
+    </hwidget_twitter>
+    <hwidget_digg type="hwidget/digg">
+        <name>Bookmark: Digg</name>
+        <description type="desc">Adds a simple "You Digg?" link</description>
+    </hwidget_digg>
+    <hwidget_delicious type="hwidget/delicious">
+        <name>Bookmark: Delicious</name>
+        <description type="desc">Adds a simple delicious.com bookmarking link</description>
+    </hwidget_delicious>
+
+
+    <hwidget_info type="hwidget/info" module="hwidget">
+        <name>HWidget Info</name>
+        <description>Info</description>
+
+        <parameters>
+            <label>
+                <label>Label</label>
+                <type>text</type>
+                <visible>1</visible>
+                <required>1</required>
+            </label>
+            <short_description>
+                <label>Message</label>
+                <type>text</type>
+                <visible>1</visible>
+                <required>1</required>
+            </short_description>
+        </parameters>
+
+    </hwidget_info>
+</widgets> 

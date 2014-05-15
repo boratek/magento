@@ -1,0 +1,115 @@
+<?php
+/**
+ * post list template
+ *
+ * @var $this Hatimeria_News_Block_Post
+ */
+?>
+
+<?php
+$collection = $this->getPosts();
+$html = $this->getFliesPosts();
+
+$head = $this->getHead();
+
+$widget = $this->getSth();
+
+//jak zwrócić kolekcję atrybutów? por. catalog/category/view.phtml i info/add_info_product.phtml
+//$attribute_collection = $this->getAttributes();
+?>
+
+<!--<!--sprawdź handlery-->
+<!--    <pre>--><?php //Zend_Debug::dump($this->getLayout()->getUpdate()->getHandles()); ?><!--</pre>-->
+<!---->
+<!--<!--spradź klasę obiektu $collection-->
+<!--    <pre>--><?php //Zend_Debug::dump('$collection: ' . get_class($collection), 'get_class') ?><!--</pre>-->
+<!---->
+<!--    <pre>--><?php //Zend_Debug::dump('debug: ' . $this->debug(), 'debug') ?><!--</pre>-->
+<!---->
+<!--    <pre>--><?php //Zend_Debug::dump($collection) ?><!--</pre>-->
+
+<!--<!--zwraca dane całego layoutu?-->
+<!--<pre>--><?php //Zend_Debug::dump($html->getData()) ?><!--</pre>-->
+<!---->
+<?php echo $html->getMyTitle(); ?>
+<!---->
+<!--<!--zwraca wybrany blok-->
+<!--<pre>--><?php //Zend_Debug::dump($head) ?><!--</pre>-->
+<!--<!--wypisuje wybrany blok -->
+<?php echo $head ?>
+<!---->
+<!---->
+<!--<!--zwraca blok widgetu z hinfo, ale chyba nic więcej nie można z tym zrobić-->
+<!--ok, zwraca sam widget, patrz News/Block/Post-->
+<!--<pre>--><?php //Zend_Debug::dump($widget) ?><!--</pre>-->
+<!---->
+<?php echo $widget ?>
+
+<pre><?php Zend_Debug::dump(Mage::getEvents()) ?></pre>
+
+
+
+<!--zwraca singleton z catalog/session-->
+<!--<pre>--><?php //Zend_Debug::dump(Mage::getSingleton('catalog/product_visibility')) ?><!--</pre>-->
+
+<!--<pre>--><?php //Zend_Debug::dump(Mage::getSingleton('catalog/resource_eav_mysql4_product_attribute_collection')->getData()) ?><!--</pre>-->
+
+
+<?php if(!$collection->count()): ?>
+    <p class="note-msg"><?php echo $this->__('There are no persons matching the selection.') ?></p>
+<?php else: ?>
+    <h2><?php echo $this->getMyTitle() ?></h2>
+
+    <?php $_iterator = 0; ?>
+    <ul class="post-list">
+        <?php foreach ($collection as $post): ?>
+
+<!--                                    <pre>--><?php //Zend_Debug::dump('$post - klasa: ' . get_class($post), 'get_class') ?><!--</pre>-->
+<!--                                    <pre>--><?php //Zend_Debug::dump($post) ?><!--</pre>-->
+<!---->
+<!--                                    <pre>--><?php //Zend_Debug::dump('$post - wartość - tytuł: ' . $post->getData('title')) ?><!--</pre>-->
+<!--                        <!--            robi to samo, co powyższy zapis-->
+<!--                                    <pre>--><?php //Zend_Debug::dump('$post - tytuł: ' . $post->getTitle()) ?><!--</pre>-->
+
+            <li>
+                <div class="posts block">
+                    <div class="block-title">
+                        <h1 class="post-title"><? echo $post->getTitle();?></h1>
+                        <h3 class="post-author"><?php echo strtoupper($post->getAuthor()); ?></h3>
+
+                                    <pre><?php Zend_Debug::dump('$post - wartość - autor: ' . $post->getData('author')) ?></pre>
+
+                    </div>
+
+                    <div class="block-content">
+                        <p class="post-text"><?php echo $post->getText(); ?></p>
+                        <span class="post-date"><?php echo $post->getDate(); ?></span>
+                    </div>
+                </div>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+<?php endif; ?>
+                                    <!--sprawdza, czy możemy iterować po kolekcji-->
+                                    <?php if($collection instanceof Varien_Data_Collection): ?>
+                                    <ul>
+                                        <?php foreach($collection as $post): ?>
+                                        <li>Some value: <?php Zend_Debug::dump('$post - wartość - tytuł: ' . $post->getData('title')) ?></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                    <?php endif; ?>
+
+
+                                    <!--leci po kolekcji i zwraca tylko dane dla autora 'bart'-->
+                                    <?php if($collection instanceof Varien_Data_Collection): ?>
+                                        <ul>
+                                            <?php foreach($collection as $post): ?>
+                                                <?php if($post->getAuthor() == 'bart'): ?>
+                                                if autor == 'bart': <?php Zend_Debug::dump('$post - wartość - autor: ' . $post->getData('title')) ?>
+                                                <?php endif; ?>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    <?php endif; ?>
+
+                                    <!--zwraca tablicę załączonych plików - tutaj, jest ich 300-->
+                                    <pre><?php print_r(get_included_files()); ?></pre>

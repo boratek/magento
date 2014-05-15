@@ -33,9 +33,26 @@
 ?>
 <?php $_helper = $this->helper('catalog/output'); ?>
 <?php $_product = $this->getProduct(); ?>
+
+
 <script type="text/javascript">
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
 </script>
+
+<!--<pre>--><?php //Zend_Debug::dump($this->getLayout()->getUpdate()->getHandles()); ?><!--</pre>-->
+<!---->
+<!--<pre>--><?php //Zend_Debug::dump('$_product: ' . get_class($_product), 'get_class') ?><!--</pre>-->
+<!---->
+<!--<pre>--><?php //Zend_Debug::dump($_product->getEntityId()) ?><!--</pre>-->
+<!---->
+<!--<pre>--><?php //Zend_Debug::dump($_helper->productAttribute($_product, $_product->getTypeId(), 'type_id')) ?><!--</pre>-->
+<!---->
+<!--<pre>--><?php //Zend_Debug::dump($_product->getHinfo()) ?><!--</pre>-->
+
+<!--<pre>--><?php //Zend_Debug::dump(Mage::getSingleton('catalog/resource_eav_mysql4_product_attribute_collection')->getData()) ?><!--</pre>-->
+
+
+
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 <div class="product-view">
     <div class="product-essential">

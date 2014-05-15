@@ -255,7 +255,7 @@
 		},
 
 		/**
-		 * Post render event. This will be executed after the control has been rendered and can be used to
+		 * Edit render event. This will be executed after the control has been rendered and can be used to
 		 * set states, add events to the control etc. It's recommended for subclasses of the control to call this method by using this.parent().
 		 *
 		 * @method postRender

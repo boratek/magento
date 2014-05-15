@@ -94,7 +94,7 @@
 		},
 
 		/**
-		 * Post render handler. This function will be called after the UI has been
+		 * Edit render handler. This function will be called after the UI has been
 		 * rendered so that events can be added.
 		 *
 		 * @method postRender

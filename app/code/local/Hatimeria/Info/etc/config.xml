@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Hatimeria_Info>
-            <version>0.1.0</version>
+            <version>0.1.1</version>
         </Hatimeria_Info>
     </modules>
 
@@ -25,4 +25,108 @@
             </updates>
         </layout>
     </frontend>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <hinfo>
+                    <file>hinfo_admin.xml</file>
+                </hinfo>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <global>
+        <helpers>
+            <hinfo>
+                <class>Hatimeria_Info_Helper</class>
+            </hinfo>
+        </helpers>
+
+        <blocks>
+            <!--podajesz ścieżkę do zbioru bloków, a nie rejestrujesz każdy osobno-->
+            <!--hinfo to nazwa, po której identyfikuje się cały moduł np przy tworzeniu jego bloków - patrz hinfo.xml-->
+            <hinfo>
+                <class>Hatimeria_Info_Block</class>
+            </hinfo>
+        </blocks>
+
+        <models>
+            <hinfo>
+                <class>Hatimeria_Info_Model</class>
+                <resourceModel>hinfo_resource</resourceModel>
+            </hinfo>
+            <hinfo_resource>
+                <class>Hatimeria_Info_Model_Resource</class>
+                <entities>
+                    <person>
+                        <table>hinfo_person</table>
+                    </person>
+                </entities>
+            </hinfo_resource>
+        </models>
+
+        <resources>
+            <hinfo_setup>
+                <setup>
+                    <module>Hatimeria_Info</module>
+                </setup>
+            </hinfo_setup>
+        </resources>
+
+        <events>
+            <catalog_product_collection_load_after>
+                <observers>
+                    <hinfo>
+                        <type>singleton</type>
+                        <class>hinfo/observer</class>
+                        <method>addInfoToProductsCollection</method>
+                    </hinfo>
+                </observers>
+            </catalog_product_collection_load_after>
+
+            <catalog_product_load_after>
+                <observers>
+                    <hinfo>
+                        <type>singleton</type>
+                        <class>hinfo/observer</class>
+                        <method>addInfoToProduct</method>
+                    </hinfo>
+                </observers>
+            </catalog_product_load_after>
+
+            <page_block_html_topmenu_gethtml_before>
+                <observers>
+                    <hinfo>
+                        <class>hinfo/observer</class>
+                        <method>addToTopmenu</method>
+                    </hinfo>
+                </observers>
+            </page_block_html_topmenu_gethtml_before>
+        </events>
+    </global>
+
+    <admin>
+        <routers>
+            <hinfo>
+                <use>admin</use>
+                <args>
+                    <module>Hatimeria_Info</module>
+                    <frontName>hinfo</frontName>
+                </args>
+            </hinfo>
+        </routers>
+    </admin>
+
+    <default>
+        <hinfo>
+            <hinfo>
+                <enabled>1</enabled>
+            </hinfo>
+            <text>
+                <hinfo_text>default 1</hinfo_text>
+                <hinfo_tax>default 2</hinfo_tax>
+            </text>
+        </hinfo>
+    </default>
 </config>

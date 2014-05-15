@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <hnews translate="title" module="hnews">
+            <title>News</title>
+            <sort_order>200</sort_order>
+            <children>
+                <page translate="title" module="hnews">
+                    <title>Posts</title>
+                    <action>hnews/adminhtml_post</action>
+                    <sort_order>0</sort_order>
+                </page>
+            </children>
+        </hnews>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <hnews translate="title" module="hnews">
+                                        <title>Hatimeria News</title>
+                                    </hnews>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

@@ -24,6 +24,17 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+
+<!--sprawdź handlery-->
+<pre><?php Zend_Debug::dump($this->getLayout()->getUpdate()->getHandles()); ?></pre>
+
+<!--spradź klasę obiektu $collection-->
+<pre><?php Zend_Debug::dump('$this class: ' . get_class($this), 'get_class') ?></pre>
+
+<pre><?php Zend_Debug::dump('debug: ' . $this->debug(), 'debug') ?></pre>
+
+
+
 <div class="page-title">
     <h1><?php echo $this->__('Your order has been received.') ?></h1>
 </div>

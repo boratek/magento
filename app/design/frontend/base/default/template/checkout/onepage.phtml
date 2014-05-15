@@ -24,6 +24,15 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+
+<!--sprawdź handlery-->
+<pre><?php Zend_Debug::dump($this->getLayout()->getUpdate()->getHandles()); ?></pre>
+
+<!--spradź klasę obiektu $collection-->
+<pre><?php Zend_Debug::dump('$this class: ' . get_class($this), 'get_class') ?></pre>
+
+
+
 <div class="page-title">
     <h1><?php echo $this->__('Checkout') ?></h1>
 </div>
@@ -36,10 +45,17 @@
         <div class="step-title">
             <span class="number"><?php echo $i ?></span>
             <h2><?php echo $_stepInfo['label'] ?></h2>
+
+            <pre><?php Zend_Debug::dump($_stepInfo['label']) ?></pre>
+
             <a href="#"><?php echo $this->__('Edit') ?></a>
         </div>
         <div id="checkout-step-<?php echo $_stepId ?>" class="step a-item" style="display:none;">
             <?php echo $this->getChildHtml($_stepId) ?>
+
+            <pre><?php Zend_Debug::dump($_stepId) ?></pre>
+
+
         </div>
     </li>
 <?php endforeach ?>

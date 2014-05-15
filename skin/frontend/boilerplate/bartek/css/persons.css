@@ -1,0 +1,12 @@
+.persons > .block-content{
+    padding: 3px;
+}
+
+.persons > .block-content > ul{
+    list-style-type: circle;
+    margin-left: 15px;
+}
+
+.persons > .block-content > ul > li{
+    padding-top: 2px;
+}

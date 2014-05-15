@@ -20,5 +20,9 @@ class Hatimeria_Info_Block_Homepage_Info extends Mage_Core_Block_Template
         $now = new DateTime();
 
         return $now->format('Y/m/d H:i');
+
     }
+
+
+
 }

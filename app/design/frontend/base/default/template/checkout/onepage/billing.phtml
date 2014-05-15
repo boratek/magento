@@ -129,6 +129,7 @@
                         </div>
                     </div>
                 </li>
+                <pre><?php Zend_Debug::dump($this->getAddress()) ?></pre>
                 <?php if(!$this->isCustomerLoggedIn()): ?>
 
         <?php $_dob = $this->getLayout()->createBlock('customer/widget_dob') ?>

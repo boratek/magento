@@ -1,0 +1,42 @@
+<?php
+/**
+ * person list template
+ *
+ * @var $this Hatimeria_Info_Block_Homepage_Person
+ */
+?>
+
+<?php
+$collection = $this->getPersons();
+?>
+    <!--sprawdź handlery-->
+    <pre><?php Zend_Debug::dump($this->getLayout()->getUpdate()->getHandles()); ?></pre>
+
+    <!--spradź klasę obiektu $collection-->
+    <pre><?php Zend_Debug::dump('$collection: ' . get_class($collection), 'get_class') ?></pre>
+
+    <pre><?php Zend_Debug::dump('debug: ' . $this->debug(), 'debug') ?></pre>
+
+<!--    <pre>--><?php //Zend_Debug::dump($collection) ?><!--</pre>-->
+
+<?php if(!$collection->count()): ?>
+    <p class="note-msg"><?php echo $this->__('There are no persons matching the selection.') ?></p>
+<?php else: ?>
+    <h2><?php echo $this->getMyTitle() ?></h2>
+        <div class="persons block">
+            <div class="block-title">
+                <strong>List</strong>
+            </div>
+                <div class="block-content">
+                    <?php $_iterator = 0; ?>
+                    <ul>
+                        <?php foreach ($collection as $person): ?>
+                            <li>
+                                <?php echo $person->getFullName(); echo $person->getEmail();?>
+                                <pre><?php Zend_Debug::dump($person) ?></pre>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+        </div>
+<?php endif; ?>

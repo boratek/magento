@@ -1,0 +1,25 @@
+<?php
+/* @see Mage_Cms_Block_Block
+ * @var $this Hatimeria_Info_Block_Catalog_Product_Addinfo
+ */
+?>
+<div class="block">
+    <div class="block-title">
+        <strong><span><?php echo $this->__('Additional Info') ?></span></strong>
+    </div>
+    <div>
+        <p><?php echo $this->getProduct()->getBlockInfo();?></p>
+        <?php echo $this->getPriceHtml($this->getProduct());?>
+        <?php $attributes = $this->getProduct()->getAttributes();
+
+                //Zend_Debug::dump($this->getProduct()->getData());
+        ?>
+    </div>
+    <!---->
+    <!--        --><?php //foreach($attributes as $attr): ?>
+    <!--            <li>-->
+    <!--                --><?php //echo $attr->getName() ?>
+    <!--            </li>-->
+    <!--        --><?php //endforeach ?><!---->
+    <a href="<?php echo $this->getAddToCartUrl($this->getProduct()); ?>"> <?php echo $this->__('Add to cart') ?> </a>
+</div>

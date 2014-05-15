@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Hatimeria_News>
+            <version>0.1.0</version>
+        </Hatimeria_News>
+    </modules>
+
+    <frontend>
+        <routers>
+            <hnews>
+                <use>standard</use>
+                <args>
+                    <module>Hatimeria_News</module>
+                    <frontName>hnews</frontName>
+                </args>
+            </hnews>
+        </routers>
+
+        <layout>
+            <updates>
+                <hnews>
+                    <file>hnews.xml</file>
+                </hnews>
+            </updates>
+        </layout>
+    </frontend>
+
+    <global>
+        <helpers>
+            <hnews>
+                <class>Hatimeria_News_Helper</class>
+            </hnews>
+        </helpers>
+        <blocks>
+            <!--podajesz ścieżkę do zbioru bloków, a nie rejestrujesz każdy osobno-->
+            <!--hnews to nazwa, po której identyfikuje się cały moduł np przy tworzeniu jego bloków - patrz hnews.xml-->
+            <hnews>
+                <class>Hatimeria_News_Block</class>
+            </hnews>
+        </blocks>
+        <models>
+            <hnews>
+                <class>Hatimeria_News_Model</class>
+                <resourceModel>hnews_resource</resourceModel>
+            </hnews>
+            <hnews_resource>
+                <class>Hatimeria_News_Model_Resource</class>
+                <entities>
+                    <post>
+                        <table>hnews_post</table>
+                    </post>
+                </entities>
+            </hnews_resource>
+        </models>
+        <resources>
+            <hnews_setup>
+                <setup>
+                    <module>Hatimeria_News</module>
+                </setup>
+            </hnews_setup>
+        </resources>
+    </global>
+
+    <admin>
+        <routers>
+            <hnews>
+                <use>admin</use>
+                <args>
+                    <module>Hatimeria_News</module>
+                    <frontName>hnews</frontName>
+                </args>
+            </hnews>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <hnews>
+                    <file>hnews_admin.xml</file>
+                </hnews>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

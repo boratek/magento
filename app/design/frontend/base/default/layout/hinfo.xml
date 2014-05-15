@@ -21,12 +21,26 @@
                 <urlParams/>
                 <position>10</position>
             </action>
+
+            <action method="addLink" translate="label title">
+                <label>Persons</label>
+                <url>info/index/persons</url>
+                <title>Info</title>
+                <prepare>true</prepare>
+                <urlParams/>
+                <position>20</position>
+            </action>
+        </reference>
+
+        <reference name="footer">
+            <block type="cms/block" name="test_block">
+                <action method="setBlockId"><block_id>Test</block_id></action>
+            </block>
         </reference>
     </default>
 
     <!-- odpala zawsze przty widoku produktu -->
     <catalog_product_view>
-
         <reference name="right">
             <remove name="catalog.compare.sidebar"/>
         </reference>
@@ -41,6 +55,11 @@
             <action method="addCss"><name>css/info.css</name></action>
         </reference>
 
+        <reference name="content">
+            <block type="hinfo/catalog_product_addinfo" after="-" name="hatimeria.add.info" template="info/add_info_product.phtml">
+                <action method="getBlockInfo"><block_id>product_info_first</block_id></action>
+            </block>
+        </reference>
     </catalog_product_view>
 
     <hinfo_index_index>
@@ -63,9 +82,14 @@
         </reference>
 
         <reference name="content">
-           <!-- <block type="core/template" name="hatimeria.info.product" template="info/info_product.phtml"></block>-->
-            <block type="catalog/product_new" name="hatimeria.info.product.new" template="catalog/product/new.phtml"></block>
+            <!--hinfo = nazwa modułu; homepage_news = ścieżka do bloku, więcej nie trzeba, bo podałeś w config.xml-->
+            <block type="hinfo/homepage_news" name="hatimeria.info.product.new" template="info/listorgrid.phtml">
+                <action method="setMyTitle"><title>Nowe Produkty</title></action>
+            </block>
 
+            <block type="hinfo/homepage_person" name="hatimeria.info.person" template="info/person.phtml">
+                <action method="setMyTitle"><title>Persons</title></action>
+            </block>
         </reference>
 
         <reference name="right">
@@ -76,5 +100,24 @@
         </reference>
 
     </hinfo_index_index>
+
+    <hinfo_index_persons>
+        <reference name="head">
+            <action method="addCss"><script>../../boilerplate/bartek/css/persons.css</script></action>
+        </reference>
+
+        <reference name="content">
+            <block type="hinfo/homepage_person" name="hatimeria.info.person" template="info/person.phtml">
+                <action method="setMyTitle"><title>Person</title></action>
+            </block>
+        </reference>
+
+        <reference name="right">
+            <remove name="cart_sidebar" />
+            <remove name="right.reports.product.viewed" />
+            <remove name="right.permanent.callout" />
+            <block type="core/template" name="hatimeria.right.info" template="info/current_date.phtml"></block>
+        </reference>
+    </hinfo_index_persons>
 
 </layout>
