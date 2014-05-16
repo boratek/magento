@@ -1,0 +1,11 @@
+<?php
+/* @var $this Hatimeria_Helloworld_Block_Page */
+?>
+
+<h3><?php echo $this->getMyTitle()?></h3>
+
+<?php Zend_Debug::dump($this->getLayout()->getUpdate()->getHandles());
+echo $this->getChildHtml('top.links');
+echo $this->getChildHtml('customer_form_register');
+?>
+

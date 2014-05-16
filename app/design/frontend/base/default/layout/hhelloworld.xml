@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+    <default>
+        <reference name="top.links">
+            <action method="addLink" translate="label title">
+                <label>Hello</label>
+                <url>hhelloworld/index</url>
+                <title>Hello</title>
+                <prepare>true</prepare>
+                <urlParams/>
+                <position>30</position>
+            </action>
+
+            <action method="addLink" translate="label title">
+                <label>Bye</label>
+                <url>hhelloworld/index/goodbye</url>
+                <title>Bye</title>
+                <prepare>true</prepare>
+                <urlParams/>
+                <position>40</position>
+            </action>
+        </reference>
+
+    </default>
+
+    <hhelloworld_index_index>
+      <reference name="content">
+        <block type="core/template" name="hhelloworld.page" template="hhelloworld/single_page.phtml">
+            <action method="setMyTitle"><title>Hello World</title></action>
+            <block type="page/template_links" name="top.links"/>
+            <block type="customer/form_register" name="customer_form_register" template="customer/form/register.phtml"/>
+        </block>
+      </reference>
+    </hhelloworld_index_index>
+
+    <hhelloworld_index_goodbye>
+        <update handle="hhelloworld_index_index"/>
+    </hhelloworld_index_goodbye>
+</layout>

@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Hatimeria_Configviewer>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Hatimeria_Configviewer>
+    </modules>
+</config>

@@ -22,4 +22,30 @@
     <!--            </li>-->
     <!--        --><?php //endforeach ?><!---->
     <a href="<?php echo $this->getAddToCartUrl($this->getProduct()); ?>"> <?php echo $this->__('Add to cart') ?> </a>
+
+    <?php
+    //taki sobie poligon - powinno być w Model/Post
+    $model = Mage::getModel('catalog/product')->load(23);
+    $price = $model->getPrice();
+
+    $post_model = Mage::getModel('hnews/post')->getCollection()->addFieldToFilter('author', 'ala');
+    $post_model->load();
+
+    foreach($post_model as $post){
+        echo $post->getAuthor();
+    }
+    $helper = Mage::helper('hnews/data');
+    $output = $helper->__('Hello');
+    $enable = $helper->isModuleEnabled('Hatimeria_Info');
+
+    $helper_sales = Mage::helper('sales');
+
+    Zend_Debug::dump($helper_sales);
+    echo $output;
+    echo $enable;
+
+//    Zend_Debug::dump($post_model);
+//    Zend_Debug::dump($price);
+//    Zend_Debug::dump($model);
+    ?>
 </div>

@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Hatimeria_Weblog>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Hatimeria_Weblog>
+    </modules>
+</config>
