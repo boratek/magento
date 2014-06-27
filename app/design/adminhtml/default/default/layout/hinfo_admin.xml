@@ -3,14 +3,14 @@
 
     <hinfo_adminhtml_person_index>
         <reference name="content">
-            <block type="hinfo/adminhtml_person" name="hinfo.adminhtml.person"></block>
+            <block type="hinfo/adminhtml_person" name="hinfo.adminhtml.person"/>
         </reference>
     </hinfo_adminhtml_person_index>
 
     <hinfo_adminhtml_person_edit>
         <reference name="content">
             <block type="hinfo/adminhtml_person_edit" name="person.edit">
-                <block type="hinfo/adminhtml_person_edit_form" name="form"></block>
+                <block type="hinfo/adminhtml_person_edit_form" name="form"/>
             </block>
         </reference>
     </hinfo_adminhtml_person_edit>

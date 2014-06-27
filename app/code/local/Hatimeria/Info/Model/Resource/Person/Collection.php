@@ -30,4 +30,4 @@ class Hatimeria_Info_Model_Resource_Person_Collection extends Mage_Core_Model_Re
             ->addFieldToFilter('is_system', 1)
             ->_toOptionArray('person_id', 'name');
     }
-} 
+}

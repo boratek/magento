@@ -64,6 +64,11 @@
                     </person>
                 </entities>
             </hinfo_resource>
+            <customer>
+                <rewrite>
+                    <customer_api_v2>Hatimeria_Info_Model_Customer_Customer_Api_V2</customer_api_v2>
+                </rewrite>
+            </customer>
         </models>
 
         <resources>

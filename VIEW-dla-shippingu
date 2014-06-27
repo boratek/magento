@@ -1,0 +1,45 @@
+<?php
+
+class Hatimeria_OrderManager_Block_Adminhtml_Period_View extends Mage_Adminhtml_Block_Sales_Order_Abstract
+{
+    protected function _construct()
+    {
+        parent::_construct();
+        $this->setTemplate('hordermanager/view.phtml');
+    }
+
+    protected function _prepareLayout()
+    {
+
+    }
+
+    public function getPeriod()
+    {
+        $periodId = $this->getRequest()->getParam('period_id');
+        $period = Mage::getModel('hordermanager/period')->load($periodId);
+
+        if ($period->isObjectNew()) {
+            Mage::throwException('Not found!');
+        }
+
+        return $period;
+    }
+
+    public function getOrders()
+    {
+        $ordersCollection = Mage::getResourceModel('hordermanager/sales_order_collection');
+        $ordersCollection->setPeriodFilter(Mage::registry('current_period'));
+        $ordersCollection->filterVisible();
+
+        return $ordersCollection;
+    }
+}
+
+//wywoływanie akcji kontrolera buttonami:
+<input type="button" value="Add Order" onclick="setLocation('<?php echo $this->getUrl('*/*/add_order', array('_query' => array('period_id' => $period->getId()))) ?>')"/>
+w powyższy sposób przekazujemy w urlu zapis /...?period_id=2
+
+
+//albo tak:
+<input type="button" value="Add Order" onclick="setLocation('<?php echo $this->getUrl('*/*/add_order', array('period_id' => $period->getId())) ?>')"/>
+

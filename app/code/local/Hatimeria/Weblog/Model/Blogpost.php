@@ -1,7 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bartek
- * Date: 5/16/14
- * Time: 12:03 PM
- */ 
+
+class Hatimeria_Weblog_Model_Blogpost extends Mage_Core_Model_Abstract
+{
+    protected function _construct()
+    {
+        $this->_init('hweblog/blogpost');
+    }
+
+}

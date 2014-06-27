@@ -80,4 +80,4 @@ class Hatimeria_Info_Block_Adminhtml_Person_Edit_Form extends Mage_Adminhtml_Blo
 
         return parent::_prepareForm();
     }
-} 
+}

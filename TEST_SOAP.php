@@ -8,9 +8,6 @@
 
 include(__DIR__ . '/app/Mage.php');
 
-
-
-
 $app = Mage::app();
 
 /**

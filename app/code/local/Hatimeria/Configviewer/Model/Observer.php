@@ -1,5 +1,6 @@
 <?php
-    class Hatimeria_Configviewer_Model_Observer {
+    class Hatimeria_Configviewer_Model_Observer
+    {
         const FLAG_SHOW_CONFIG = 'showConfig';
         const FLAG_SHOW_CONFIG_FORMAT = 'showConfigFormat';
 

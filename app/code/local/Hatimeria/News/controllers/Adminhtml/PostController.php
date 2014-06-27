@@ -21,6 +21,8 @@ class Hatimeria_News_Adminhtml_PostController extends Mage_Adminhtml_Controller_
             ->_addBreadcrumb(Mage::helper('hnews')->__('Post Control'), Mage::helper('hnews')->__('Post Control'))
             ->_addBreadcrumb(Mage::helper('hnews')->__('Post'), Mage::helper('hnews')->__('Post'));
 
+
+
         return $this;
     }
 
@@ -31,6 +33,8 @@ class Hatimeria_News_Adminhtml_PostController extends Mage_Adminhtml_Controller_
     {
         $this->_title($this->__('News'))->_title($this->__('Post'));
         $this->loadLayout();
+        $h = $this->getLayout()->getAllBlocks();
+
         $this->renderLayout();
     }
 

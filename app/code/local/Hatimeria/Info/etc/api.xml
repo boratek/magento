@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!-- Hatimeria/Info/etc/api.xml -->
+<config>
+    <api>
+        <resources>
+            <!-- START RESOURCES -->
+            <!-- START CUSTOMER RESOURCES -->
+            <hinfo_customer translate="title" module="customer">
+                <model>customer/customer_api</model>
+                <title>Customer API</title>
+                <acl>customer</acl>
+                <methods>
+                    <list translate="title" module="customer">
+                        <title>Retrieve customers paginated list</title>
+                        <method>items</method> <!-- we have another method name inside our resource -->
+                        <acl>customer/info</acl>
+                    </list>
+                    <create translate="title" module="customer">
+                        <title>Create customer</title>
+                        <acl>customer/create</acl>
+                    </create>
+                    <info translate="title" module="customer">
+                        <title>Retrieve customer data</title>
+                        <acl>customer/info</acl>
+                    </info>
+                    <update translate="title" module="customer">
+                        <title>Update customer data</title>
+                        <acl>customer/update</acl>
+                    </update>
+                    <delete>
+                        <title>Delete customer</title>
+                        <acl>customer/delete</acl>
+                    </delete>
+                </methods>
+                <faults module="customer">
+                    <data_invalid>
+                        <code>100</code> <!-- if we get invalid input data for customers -->
+                        <message>Invalid customer data. Details in error message.</message>
+                    </data_invalid>
+                    <filters_invalid>
+                        <code>101</code>
+                        <message>Invalid filters specified. Details in error message.</message>
+                    </filters_invalid>
+                    <not_exists>
+                        <code>102</code>
+                        <message>Customer not exists.</message>
+                    </not_exists>
+                    <not_deleted>
+                        <code>103</code>
+                        <message>Customer not deleted. Details in error message.</message>
+                    </not_deleted>
+                </faults>
+            </hinfo_customer>
+            <!-- END CUSTOMER RESOURCES -->
+            <!-- END RESOURCES -->
+        </resources>
+        <v2>
+            <resources_function_prefix>
+                <!-- START V2 FUNCTIONS PREFIX -->
+                <!-- START V2 CUSTOMER FUNCTION PREFIX -->
+                <hinfo_customer>mapy_customerCustomer</hinfo_customer>
+                <!-- END V2 CUSTOMER FUNCTION PREFIX -->
+                <!-- END V2 FUNCTIONS PREFIX -->
+            </resources_function_prefix>
+        </v2>
+        <acl>
+            <resources>
+                <!-- ACL RESOURCES -->
+                <!-- START CUSTOMER ACL RESOURCES -->
+                <hinfo_customer translate="title" module="customer">
+                    <title>Customers</title>
+                    <sort_order>3</sort_order>
+                    <list translate="title" module="customer">
+                        <title>View All</title>
+                    </list>
+                    <create translate="title" module="customer">
+                        <title>Create</title>
+                    </create>
+                    <info translate="title" module="customer">
+                        <title>Get Info</title>
+                    </info>
+                    <update translate="title" module="customer">
+                        <title>Update</title>
+                    </update>
+                    <delete translate="title" module="customer">
+                        <title>Delete</title>
+                    </delete>
+                </hinfo_customer>
+                <!-- END CUSTOMER ACL RESOURCES -->
+                <!-- END ACL RESOURCES -->
+            </resources>
+        </acl>
+    </api>
+</config>
